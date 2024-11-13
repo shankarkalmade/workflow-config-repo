@@ -1,0 +1,23 @@
+#spring:
+#  kafka:
+#    consumer:
+#      auto-offset-reset: earliest
+#      bootstrap-servers: kafka:9092
+#      group-id: group-default
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring:
+#          json:
+#            value:
+#              default:
+#                type: 'com.workflow.WorkflowInitiator.kafka.consumer.MyEvent'
+#            type:
+#              mapping: 'com.workflow.WorkflowConfigurationService.kafka.producer.MyEvent:com.workflow.WorkflowInitiator.kafka.consumer.MyEvent'
+#            trusted:
+#              packages: 'com.workflow.WorkflowConfigurationService.kafka.producer'
+#    producer:
+#      acks: -1
+#      bootstrap-servers: kafka:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
