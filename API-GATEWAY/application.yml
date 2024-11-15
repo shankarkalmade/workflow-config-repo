@@ -3,10 +3,10 @@ spring:
     gateway:
       routes:
         - id: WORKFLOW-CONFIGURATION-SERVICE
-          uri: WORKFLOW-CONFIGURATION-SERVICE
+          uri: lb://WORKFLOW-CONFIGURATION-SERVICE
           predicates:
             - Path=/config/**
         - id: WORKFLOW-INITIATOR
-          uri: WORKFLOW-INITIATOR
+          uri: lb://WORKFLOW-INITIATOR
           predicates:
             - Path=/init/**
